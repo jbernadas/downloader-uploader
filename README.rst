@@ -15,8 +15,10 @@ http://github.com/jbernadas/pdf-uploader
 
 These are the dependencies it requires:
 
-- Selenium
-- Os
+- selenium
+- os
+- requests
+- urllib
 
 Installation
 ============
