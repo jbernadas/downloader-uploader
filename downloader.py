@@ -10,6 +10,7 @@ folder_location = './docs_for_upload'
 response = requests.get(url).text
 soup = BeautifulSoup(response, "lxml")
 
+# Only look for these types of files
 QUALIFIERS = [
     "a[href$='.pdf']",
     "a[href$='.doc']",
@@ -22,6 +23,7 @@ QUALIFIERS = [
     # "a[href$='.tar.gz']"
 ]
 
+# Our downloader script
 for qualifier in QUALIFIERS:
     for link in soup.select(qualifier):
         filename = os.path.join(folder_location, link['href'].split('/')[-1])
