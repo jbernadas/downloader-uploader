@@ -20,7 +20,7 @@ driver.get(target_site + '/login')
 proceed = input(
     "Are you logged-in and ready to proceed? 'y' = yes, any key to abort: ")
 
-FILESDIR = "files_for_upload"
+FILESDIR = "docs_for_upload"
 
 if proceed == 'y':
     for filename in os.listdir('./' + FILESDIR):
