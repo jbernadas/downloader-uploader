@@ -1,4 +1,4 @@
-# You have to have the same version-as-your-browser Chrome WebDriver or Firefox GeckoDriver to use this.
+# You have to have the same version-as-your-browser Chrome WebDriver or Firefox GeckoDriver to use this. You have to install those separately from pip, and needs to be added to PATH.
 
 import os
 from selenium import webdriver
