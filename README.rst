@@ -1,5 +1,5 @@
 ============
-PDF UPLOADER
+DOCUMENT UPLOADER
 ============
 
 A Python3 multiple PDF uploader for Drupal 8 user interface.
