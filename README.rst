@@ -2,7 +2,7 @@
 DOCUMENT UPLOADER
 ============
 
-A Python3 multiple PDF/Docx dowloader/uploader for Drupal 8 user interface.
+A Python3 multiple document dowloader/uploader for Drupal 8 user interface.
 
 Features:
 
