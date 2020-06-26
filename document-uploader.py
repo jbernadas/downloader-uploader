@@ -24,7 +24,7 @@ FILESDIR = "files_for_upload"
 
 if proceed == 'y':
     for filename in os.listdir('./' + FILESDIR):
-        if filename.endswith('.pdf'):
+        if filename.endswith('.pdf' or '.docx'):
             wait = WebDriverWait(driver, 60)
             driver.get(target_site + "/media/add/document")
             driver.find_element_by_id(
