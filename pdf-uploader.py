@@ -4,21 +4,15 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as cond
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
 from selenium.webdriver.support.expected_conditions import element_to_be_clickable
 
-# (Not so important) Prompt user which browser webdriver to load
-
-# Initialize webdriver
+# Initialize webdriver. We are using Firefox because Chrome is spotty on the login bit.
 driver = webdriver.Firefox()
 
-# Prompt the user which website to login to
-# target_site = input("What is the name of the website? ")
-
-target_site = "https://asc-prod.llnl.gov"
+target_site = input("What is the name of the website? ")
 
 # Login to site manually
 driver.get(target_site + '/login')
