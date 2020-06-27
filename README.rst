@@ -9,7 +9,7 @@ Features:
 - Uploads multiple documents to Drupal 8 user interface.
 - Downloads multiple documents from any website.
 - Does not need any monitoring, will happily upload/download all downloadable documents.
-- Can upload hundreds of images stored in a predefined directory.
+- Can upload hundreds, even thousands (theoretically), of documents stored in its predefined directory.
 
 Contributions and comments are welcome at: 
 http://github.com/jbernadas/document-uploader
