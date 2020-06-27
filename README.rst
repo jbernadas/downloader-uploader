@@ -93,6 +93,6 @@ Please use Github to report bugs, feature requests and submit your code:
 http://github.com/jbernadas/document-uploader
 
 :author: Joseph Bernadas
-:version: 1.0.0
+:version: 0.0.1
 :date: 2020/06/26
 :license: GPL version 3
