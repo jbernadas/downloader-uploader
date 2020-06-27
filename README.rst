@@ -6,12 +6,13 @@ A Python3 multiple document dowloader/uploader for Drupal 8 user interface. Can 
 
 Features:
 
-- Uploads multiple images to Drupal 8 user interface.
-- Waits for user to input 'alt' text before proceeding.
+- Uploads multiple documents to Drupal 8 user interface.
+- Downloads multiple documents from any website.
+- Does not need any monitoring, will happily upload/download all downloadable documents.
 - Can upload hundreds of images stored in a predefined directory.
 
 Contributions and comments are welcome at: 
-http://github.com/jbernadas/pdf-uploader
+http://github.com/jbernadas/document-uploader
 
 These are the dependencies it requires:
 
@@ -25,7 +26,7 @@ Installation
 
 Clone as usual:
 :: 
-  git clone https://github.com/jbernadas/pdf-uploader
+  git clone https://github.com/jbernadas/document-uploader
 
 Go inside the created directory: 
 :: 
@@ -68,7 +69,7 @@ Bugs & Contribution
 ===================
 
 Please use Github to report bugs, feature requests and submit your code:
-http://github.com/jbernadas/pdf-uploader
+http://github.com/jbernadas/document-uploader
 
 :author: Joseph Bernadas
 :version: 1.0.0
