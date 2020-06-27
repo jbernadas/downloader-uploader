@@ -34,6 +34,8 @@ Go inside the created directory:
 Use pip to install all the above requirements:
 ::
   pip install selenium
+  pip install requests
+  pip install urllib
 
 Configuration
 =============
@@ -43,7 +45,7 @@ None.
 Documentation
 =============
 
-You can tweak the arguments and parameters to make it find the necessary table targets.
+You can tweak the arguments and parameters to make it find the necessary targets.
 
 Usage
 =====
