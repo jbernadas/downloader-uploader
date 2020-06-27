@@ -22,7 +22,19 @@ proceed = input(
 
 FILESDIR = "docs_for_upload"
 
-QUALIFIERS = ['.pdf', '.docx', '.txt', '.doc', '.wrf', '.xls', '.xlsx']
+QUALIFIERS = [
+    '.pdf',
+    '.docx',
+    '.txt',
+    '.doc',
+    '.wrf',
+    '.xls',
+    '.xlsx'
+    # '.tar',
+    # '.tgz',
+    # '.gz',
+    # '.bz2'
+]
 
 if proceed == 'y':
     for qualifier in QUALIFIERS:

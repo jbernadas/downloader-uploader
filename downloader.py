@@ -18,15 +18,17 @@ QUALIFIERS = [
     "a[href$='.txt']",
     "a[href$='.wrf']",
     "a[href$='.xls']",
-    "a[href$='.xlsx']"
-    # "a[href$='.tar']",
-    # "a[href$='.tar.gz']"
+    "a[href$='.xlsx']",
+    "a[href$='.tgz']",
+    "a[href$='.gz']",
+    "a[href$='.bz2']",
+    "a[href$='.tar']"
 ]
 
 # Our downloader script
 for qualifier in QUALIFIERS:
     for link in soup.select(qualifier):
         filename = os.path.join(folder_location, link['href'].split('/')[-1])
-        # print(filename)
         with open(filename, 'wb') as f:
             f.write(requests.get(urljoin(url, link['href'])).content)
+print("Done!")
