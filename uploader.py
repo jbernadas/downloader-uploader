@@ -51,6 +51,7 @@ if proceed == 'y':
                 wait.until(element_to_be_clickable(
                     (By.XPATH, 'html/body/div[2]/div[1]/main/div[4]/div[1]/form/div[8]/input[@id="edit-submit"]'))).click()
                 continue
+    print('Done!')
     driver.quit()
 else:
     driver.quit()
