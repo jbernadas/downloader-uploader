@@ -43,7 +43,7 @@ QUALIFIERS = [
 if proceed == 'y':
     # For each qualifier in list of QUALIFIERS
     for qualifier in QUALIFIERS:
-        # For each filename inside our document directory
+        # for each filename inside our document directory
         for filename in os.listdir('./' + FILESDIR):
             # and if filename ends with one of our qualifier
             if filename.endswith(qualifier):
