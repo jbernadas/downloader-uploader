@@ -14,12 +14,15 @@ Features:
 Contributions and comments are welcome at: 
 http://github.com/jbernadas/document-uploader
 
-These are the dependencies it requires:
+These are the requirements:
 
 - selenium
 - os
+- lxml
+- bs4
 - requests
 - urllib
+- geckodriver - downloaded separately from Mozilla repository at https://github.com/mozilla/geckodriver
 
 Installation
 ============
@@ -32,11 +35,29 @@ Go inside the created directory:
 :: 
   cd pdf-uploader
 
-Use pip to install all the above requirements:
+Use virtualenv by creating a virtual environment folder called venv inside the root folder:
 ::
-  pip install selenium
-  pip install requests
-  pip install urllib
+  python3 -m venv venv
+
+or:
+::
+  virtualenv venv
+
+Fireup the virtualenv (Mac):
+::
+  source venv/bin/activate
+  
+Fireup the virtualenv (Windows):
+::
+  venv/Scripts/activate
+
+Install all requirements by:
+::
+  pip install -r requirements.txt
+
+Deactivate virtualenv:
+::
+  deactivate
 
 Configuration
 =============
@@ -55,15 +76,15 @@ cd into the root directory:
 ::
   cd pdf-uploader
 
-Put all the images you want to upload into files_for_upload folder.
+Put all the documents you want to upload into docs_for_upload folder.
 
 Fire it up:
 ::
-  python3 pdf-uploader.py
+  python3 document-uploader.py
 
 The script will wait for you to login to your Drupal site. When you are logged in, hit the 'y' key to let the script proceed.
 
-Repeat.
+When script is done it will close by itself.
 
 Bugs & Contribution
 ===================
