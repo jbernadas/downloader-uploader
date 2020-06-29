@@ -12,18 +12,19 @@ soup = BeautifulSoup(response, "lxml")
 
 # Only look for these types of files
 QUALIFIERS = [
+    "a[href$='.tgz']",
+    "a[href$='.gz']",
+    "a[href$='.bz2']",
     "a[href$='.pdf']",
     "a[href$='.doc']",
     "a[href$='.docx']",
     "a[href$='.txt']",
     "a[href$='.wrf']",
     "a[href$='.xls']",
-    "a[href$='.xlsx']",
-    "a[href$='.tgz']",
-    "a[href$='.gz']",
-    "a[href$='.bz2']",
-    "a[href$='.tar']"
+    "a[href$='.xlsx']"
 ]
+
+count = 0
 
 # Our downloader script
 for qualifier in QUALIFIERS:
@@ -31,4 +32,5 @@ for qualifier in QUALIFIERS:
         filename = os.path.join(folder_location, link['href'].split('/')[-1])
         with open(filename, 'wb') as f:
             f.write(requests.get(urljoin(url, link['href'])).content)
-print("Done!")
+            count += 1
+print("Done! Downloaded a total of %s documents!" % count)
