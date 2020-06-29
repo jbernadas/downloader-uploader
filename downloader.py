@@ -33,4 +33,4 @@ for qualifier in QUALIFIERS:
         with open(filename, 'wb') as f:
             f.write(requests.get(urljoin(url, link['href'])).content)
             count += 1
-print("Done! Downloaded a total of %s documents!" % count)
+print("Done! Downloaded a total of %s document/s!" % count)
