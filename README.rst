@@ -33,7 +33,7 @@ Clone as usual:
 
 Go inside the created directory: 
 :: 
-  cd pdf-uploader
+  cd document-uploader
 
 Use virtualenv by creating a virtual environment folder called venv inside the root folder:
 ::
@@ -74,7 +74,7 @@ Usage
 
 cd into the root directory:
 ::
-  cd pdf-uploader
+  cd document-uploader
 
 Put all the documents you want to upload into docs_for_upload folder.
 
@@ -82,9 +82,9 @@ Fire it up:
 ::
   python3 document-uploader.py
 
-The script will wait for you to login to your Drupal site. When you are logged in, hit the 'y' key to let the script proceed.
+The script will first ask what URL to go to, then will wait for you to login. When you are logged in, hit the 'y' key to let the script proceed.
 
-When script is done it will close by itself.
+When script is done downloading it will tell you how many documents were downloaded and close by itself.
 
 Bugs & Contribution
 ===================
