@@ -12,9 +12,10 @@ soup = BeautifulSoup(response, "lxml")
 
 # Only look for these types of files
 QUALIFIERS = [
-    "a[href$='.tgz']",
-    "a[href$='.gz']",
-    "a[href$='.bz2']",
+    # "a[href$='.tgz']",
+    # "a[href$='.gz']",
+    # "a[href$='.bz2']",
+    # "a[href$='.tar']",
     "a[href$='.pdf']",
     "a[href$='.doc']",
     "a[href$='.docx']",
