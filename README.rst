@@ -82,7 +82,7 @@ Fire it up:
 ::
   python3 document-uploader.py
 
-The script will first ask you what URL will it be targetting, then will wait for you to login to your Drupal site. When you are logged in, hit the 'y' key to let the script proceed.
+The script will first ask what URL to go to, then will wait for you to login. When you are logged in, hit the 'y' key to let the script proceed.
 
 When script is done it will close by itself, and tell you how many documents were downloaded.
 
