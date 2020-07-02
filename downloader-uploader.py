@@ -7,6 +7,12 @@ import os
 from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urljoin
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.expected_conditions import presence_of_element_located
+from selenium.webdriver.support.expected_conditions import element_to_be_clickable
 
 def downloader():
     url = input("What is the page you want to download from? ")
@@ -44,15 +50,6 @@ def downloader():
     print("Done! Downloaded a total of %s document/s!" % count)
 
 def uploader():
-
-    import os
-    from selenium import webdriver
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.support.ui import WebDriverWait
-    # from selenium.common.exceptions import NoAlertPresentException
-    from selenium.common.exceptions import TimeoutException
-    from selenium.webdriver.support.expected_conditions import presence_of_element_located
-    from selenium.webdriver.support.expected_conditions import element_to_be_clickable
 
     # Initialize webdriver. We are using Firefox because Chrome is spotty on the login bit.
     driver = webdriver.Firefox()
