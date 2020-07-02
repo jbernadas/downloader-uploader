@@ -11,6 +11,7 @@ from urllib.parse import urljoin
 def downloader():
     url = input("What is the page you want to download from? ")
 
+    # DO NOT RENAME THIS FOLDER, BOTH FUNCTIONS RELY ON THE SAME FOLDER NAME.
     folder_location = './docs_for_upload'
 
     response = requests.get(url).text
