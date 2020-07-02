@@ -2,4 +2,3 @@
 docs_for_upload/*
 !docs_for_upload/.gitkeep
 venv/
- 
