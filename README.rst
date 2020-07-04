@@ -2,7 +2,7 @@
 DOCUMENT DOWNLOADER/UPLOADER
 ============
 
-A Python3 multiple document dowloader/uploader for Drupal 8 user interface. Can download/upload PDF, DOCX, DOC, TXT, WRF, XLS, XLSX, BZ2, TAR, TAR.GZ files.
+A Python3 multiple document dowloader/uploader specifically made for use with Drupal 8 content interface. It can download/upload PDF, DOCX, DOC, TXT, WRF, XLS, XLSX, BZ2, TAR, TAR.GZ files.
 
 Features:
 
