@@ -49,7 +49,7 @@ or:
 4. Fireup your virtualenv (Linux/Mac):
 ::
   source venv/bin/activate
-  
+
 or fireup your virtualenv (Windows):
 ::
   venv/Scripts/activate
