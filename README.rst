@@ -14,7 +14,7 @@ Features:
 Contributions and comments are welcome at: 
 http://github.com/jbernadas/document-uploader
 
-All you need to run this CLI app is VirtualEnv (https://pypi.org/project/virtualenv/). VirtualEnv lets you run your Python script inside a virtual environment, isolated from all other modules. However, if you would rather not use VirtualEnv, you can download the following dependencies one-by-one:
+All you need to run this CLI app is VirtualEnv (https://pypi.org/project/virtualenv/). VirtualEnv lets you run your Python script inside a virtual environment, isolated from all other modules. Using virtualenv you can let pip manage your dependencies automatically. However, if you would rather not use VirtualEnv, you can download the following dependencies one-by-one:
 
 - selenium
 - os
@@ -23,7 +23,7 @@ All you need to run this CLI app is VirtualEnv (https://pypi.org/project/virtual
 - requests
 - urllib
 
-IMPORTANT: GeckoDriver is required when using the upload function of this app. You have to install this manually, then make sure it is in your computer's PATH environment.
+IMPORTANT: Whether you are using virtualenv or not you need to have GeckoDriver installed, it is a Mozilla product used for automated testing, it is required when using the upload function of this app. Install it manually then make sure it is in your computer's PATH environment.
 
 - geckodriver - downloaded separately from Mozilla repository at https://github.com/mozilla/geckodriver
 
