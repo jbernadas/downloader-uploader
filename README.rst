@@ -99,6 +99,7 @@ Downloading
 
 Uploading
 *********
+
 1. Make sure all the documents you want to upload are inside the docs_for_upload folder.
 
 2. Fire up the script by the below command:
