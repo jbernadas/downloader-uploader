@@ -40,7 +40,7 @@ def downloader():
 
     count = 0
 
-    # Our downloader script
+    ### Our actual downloader script ###
     # For each qualifier in our list of QUALIFIERS
     for qualifier in QUALIFIERS:
         # and for each link inside our soup with the above qualified extension
@@ -86,6 +86,7 @@ def uploader():
         # '.bz2'
     ]
 
+    ### Our uploader script ###
     if proceed == 'y':
         # For each qualifier in list of QUALIFIERS
         for qualifier in QUALIFIERS:
