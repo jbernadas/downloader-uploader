@@ -1,6 +1,6 @@
 # This is a document downloader/uploader.
-# You have to have the same version-as-your-browser 
-# Firefox GeckoDriver to use this. You have to install 
+# You have to have the same version-as-your-browser
+# Firefox GeckoDriver to use this. You have to install
 # those separately from pip, and needs to be added to PATH.
 
 import os
@@ -55,7 +55,6 @@ def downloader():
     print("Done! Downloaded a total of %s document/s!" % count)
 
 def uploader():
-
     # Initialize webdriver. We are using Firefox because Chrome is spotty on the login bit.
     driver = webdriver.Firefox()
 
@@ -69,7 +68,7 @@ def uploader():
     proceed = input(
         "Are you logged-in and ready to proceed? 'y' = yes, any key to abort: ")
 
-    # The directory where our soon-to-be uploaded documents reside 
+    # The directory where our soon-to-be uploaded documents reside
     FILESDIR = "docs_for_upload"
 
     # List of file types we are looking to upload
