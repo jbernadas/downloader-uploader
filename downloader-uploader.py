@@ -41,10 +41,15 @@ def downloader():
     count = 0
 
     # Our downloader script
+    # For each qualifier in our list of QUALIFIERS
     for qualifier in QUALIFIERS:
+        # and for each link inside our soup with the above qualified extension
         for link in soup.select(qualifier):
+            # create a variable called filename which corresponds to the address of our downloadable file 
             filename = os.path.join(folder_location, link['href'].split('/')[-1])
+            # open the filename address
             with open(filename, 'wb') as f:
+                # get the file and writes it
                 f.write(requests.get(urljoin(url, link['href'])).content)
                 count += 1
     print("Done! Downloaded a total of %s document/s!" % count)
