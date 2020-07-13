@@ -14,6 +14,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
 from selenium.webdriver.support.expected_conditions import element_to_be_clickable
 
+# This is the downloader part of the script
 def downloader():
     url = input("What is the page you want to download from? ")
 
@@ -54,6 +55,7 @@ def downloader():
                 count += 1
     print("Done! Downloaded a total of %s document/s!" % count)
 
+# This is the uploader part of script
 def uploader():
     # Initialize webdriver. We are using Firefox because Chrome is spotty on the login bit.
     driver = webdriver.Firefox()
@@ -64,7 +66,7 @@ def uploader():
     # Login to site manually
     driver.get(target_site + '/login')
 
-    # Ask for user's input
+    # Ask if user has logged-in to site and ready to proceed
     proceed = input(
         "Are you logged-in and ready to proceed? 'y' = yes, any key to abort: ")
 
@@ -92,16 +94,17 @@ def uploader():
         for qualifier in QUALIFIERS:
             # for each filename inside our document directory
             for filename in os.listdir('./' + FILESDIR):
-                # and if filename ends with one of our qualifier
+                # and if filename ends with the qualifier being iterated
                 if filename.endswith(qualifier):
-                    # initialize a wait variable that lets the driver to wait for how many seconds
+                    # initialize a wait variable that makes the driver wait for so many seconds
                     wait = WebDriverWait(driver, 60)
-                    # go to the /media/add/document of the Drupal 8 page
+                    # go to the /media/add/document of the Drupal site
                     driver.get(target_site + "/media/add/document")
-                    # looks for a particular id and fills it with the path to our file-to-upload
+                    # look for the id of input area and fill it with the path to our file-to-upload
                     driver.find_element_by_id(
                         "edit-field-document-0-upload").send_keys(os.getcwd() + '\\' + FILESDIR + '\\' + filename)
-                    # wait until the remove button appears before proceeding
+                    # wait until the page is finished uploading, in this case 
+                    # when the remove button appears, before proceeding
                     wait.until(presence_of_element_located(
                         (By.NAME, 'field_document_0_remove_button')))
                     # look for the 'name' input box and fill it with the same name as the file
