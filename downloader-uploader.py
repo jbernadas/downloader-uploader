@@ -17,6 +17,7 @@ from selenium.webdriver.support.expected_conditions import element_to_be_clickab
 # This is the downloader part of the script
 def downloader():
     url = input("What is the page you want to download from? ")
+    year = input("What year report is this? ")
 
     # DO NOT RENAME THIS FOLDER, BOTH FUNCTIONS RELY ON THE SAME FOLDER NAME.
     folder_location = './docs_for_upload'
@@ -47,13 +48,14 @@ def downloader():
         # and for each link inside our soup with the above qualified extension
         for link in soup.select(qualifier):
             # create a variable called filename which corresponds to the address of our downloadable file 
-            filename = os.path.join(folder_location, link['href'].split('/')[-1])
+            filename = os.path.join(folder_location,  year + '-' + link['href'].split('/')[-1])
             # open the filename address
             with open(filename, 'wb') as f:
                 # get the file and writes it
                 f.write(requests.get(urljoin(url, link['href'])).content)
                 count += 1
-    print("Done! Downloaded a total of %s document/s!" % count)
+    
+    print("Done! Downloaded a total of {} document/s!".format(count))
 
 # This is the uploader part of script
 def uploader():
@@ -73,6 +75,8 @@ def uploader():
     # The directory where our soon-to-be uploaded documents reside
     FILESDIR = "docs_for_upload"
 
+    fileCount = sum([len(files) for r, d, files in os.walk(FILESDIR)])
+
     # List of file types we are looking to upload
     QUALIFIERS = [
         '.pdf',
@@ -87,7 +91,7 @@ def uploader():
         # '.gz',
         # '.bz2'
     ]
-
+    count = 0
     ### Our uploader script ###
     if proceed == 'y':
         # For each qualifier in list of QUALIFIERS
@@ -97,7 +101,7 @@ def uploader():
                 # and if filename ends with the qualifier being iterated
                 if filename.endswith(qualifier):
                     # initialize a wait variable that makes the driver wait for so many seconds
-                    wait = WebDriverWait(driver, 60)
+                    wait = WebDriverWait(driver, 120)
                     # go to the /media/add/document of the Drupal site
                     driver.get(target_site + "/media/add/document")
                     # look for the id of input area and fill it with the path to our file-to-upload
@@ -114,8 +118,11 @@ def uploader():
                     wait.until(element_to_be_clickable(
                         (By.XPATH, 'html/body/div[2]/div[1]/main/div[4]/div[1]/form/div[8]/input[@id="edit-submit"]'))).click()
                     # rinse, repeat.
+                    count += 1
                     continue
-        print('Done!')
+        
+        print('Done! Uploaded a total of {}/{} document/s.'.format(count, fileCount))
+        
         # Exit the driver.
         driver.quit()
     else:
@@ -129,3 +136,5 @@ elif (upload_or_download == 'd'):
     downloader()
 else:
     upload_or_download = input("You need to type d for download, u for upload. ")
+
+print('\a')
