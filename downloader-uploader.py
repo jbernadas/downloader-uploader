@@ -6,6 +6,7 @@
 import os
 from bs4 import BeautifulSoup
 import requests
+import sys
 from urllib.parse import urljoin
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -56,6 +57,7 @@ def downloader():
                 count += 1
     
     print("Done! Downloaded a total of {} document/s!".format(count))
+    print('\a')
 
 # This is the uploader part of script
 def uploader():
@@ -119,10 +121,12 @@ def uploader():
                         (By.XPATH, 'html/body/div[2]/div[1]/main/div[4]/div[1]/form/div[8]/input[@id="edit-submit"]'))).click()
                     # rinse, repeat.
                     count += 1
+
+                    print("Upload progress: {}/{}".format(count, (fileCount -1)))
                     continue
         
-        print('Done! Uploaded a total of {}/{} document/s.'.format(count, fileCount))
-        
+        print('Upload complete! {} of {} documents uploaded.'.format(count, (fileCount -1)))
+        print('\a')
         # Exit the driver.
         driver.quit()
     else:
@@ -136,5 +140,9 @@ elif (upload_or_download == 'd'):
     downloader()
 else:
     upload_or_download = input("You need to type d for download, u for upload. ")
-
-print('\a')
+    if (upload_or_download == 'u'):
+        uploader()
+    if (upload_or_download == 'd'):
+        downloader()
+    else:
+        exit()
