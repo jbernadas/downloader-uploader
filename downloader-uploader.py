@@ -18,7 +18,7 @@ from selenium.webdriver.support.expected_conditions import element_to_be_clickab
 # This is the downloader part of the script
 def downloader():
     url = input("What is the page you want to download from? ")
-    year = input("What year report is this? ")
+    # year = input("What year report is this? ")
 
     # DO NOT RENAME THIS FOLDER, BOTH FUNCTIONS RELY ON THE SAME FOLDER NAME.
     folder_location = './docs_for_upload'
@@ -49,7 +49,8 @@ def downloader():
         # and for each link inside our soup with the above qualified extension
         for link in soup.select(qualifier):
             # create a variable called filename which corresponds to the address of our downloadable file 
-            filename = os.path.join(folder_location,  year + '-' + link['href'].split('/')[-1])
+            # filename = os.path.join(folder_location,  year + '-' + link['href'].split('/')[-1])
+            filename = os.path.join(folder_location, link['href'].split('/')[-1])
             # open the filename address
             with open(filename, 'wb') as f:
                 # get the file and writes it
@@ -131,18 +132,24 @@ def uploader():
         driver.quit()
     else:
         driver.quit()
+        
+def main():
+    upload_or_download = input("Welcome to DOWNLOADER/UPLOADER!\nType d for download, u for upload. ")
 
-upload_or_download = input("Welcome to DOWNLOADER/UPLOADER!\nType d for download, u for upload. ")
-
-if (upload_or_download == 'u'):
-    uploader()
-elif (upload_or_download == 'd'):
-    downloader()
-else:
-    upload_or_download = input("You need to type d for download, u for upload. ")
     if (upload_or_download == 'u'):
         uploader()
-    if (upload_or_download == 'd'):
+    elif (upload_or_download == 'd'):
         downloader()
     else:
-        exit()
+        upload_or_download = input("You need to type d for download, u for upload. ")
+        if (upload_or_download == 'u'):
+            uploader()
+        if (upload_or_download == 'd'):
+            downloader()
+        else:
+            exit()
+
+if __name__ == "__main__":
+    main()
+
+
