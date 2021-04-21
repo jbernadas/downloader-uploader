@@ -109,7 +109,7 @@ def uploader():
                     driver.get(target_site + "/media/add/document")
                     # look for the id of input area and fill it with the path to our file-to-upload
                     driver.find_element_by_id(
-                        "edit-field-document-0-upload").send_keys(os.getcwd() + '\\' + FILESDIR + '\\' + filename)
+                        "edit-field-document-0-upload").send_keys(os.path.join(os.getcwd(), FILESDIR, filename))
                     # wait until the page is finished uploading, in this case 
                     # when the remove button appears, before proceeding
                     wait.until(presence_of_element_located(
